@@ -1,27 +1,26 @@
 package com.metaxiii.fr.fakefeign.controller;
 
 import com.metaxiii.fr.fakefeign.dto.ErrorDto;
+import com.metaxiii.fr.fakefeign.exception.CustomException;
+import com.metaxiii.fr.fakefeign.exception.ErrorCodeDetails;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-import java.nio.file.AccessDeniedException;
 
 @Slf4j
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
-    @ExceptionHandler(AccessDeniedException.class)
+    @ExceptionHandler(CustomException.class)
     public ResponseEntity<Object> handleAccessDeniedException(
-            Exception ex, WebRequest request) {
-        log.error(ex.getMessage());
-        log.info(request.toString());
-        final var error = new ErrorDto(403, "this is my message, you should not use 1 for id");
-        return new ResponseEntity<>(
-                error, new HttpHeaders(), HttpStatus.FORBIDDEN);
+            CustomException exception) {
+        log.error(exception.getMessage());
+        final var details = exception.getDetails();
+        if (details == null) {
+            return ResponseEntity.status(500).body(new ErrorDto(500, exception.getMessage()));
+        }
+        final var errorDto = new ErrorDto(details.getCodeStatus(), exception.getMessage());
+        return ResponseEntity.status(details.getCodeStatus()).body(errorDto);
     }
 }

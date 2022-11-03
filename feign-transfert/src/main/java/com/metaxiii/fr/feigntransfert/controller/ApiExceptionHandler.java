@@ -18,7 +18,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
             Exception ex, WebRequest request) {
         log.error(ex.getMessage());
         log.info(request.toString());
-        final var error = new ErrorDto(404, ex.getMessage());
+        final var error = new ErrorDto(404, ex.getCause().getMessage());
         return new ResponseEntity<>(
                 error, new HttpHeaders(), HttpStatus.FORBIDDEN);
     }
