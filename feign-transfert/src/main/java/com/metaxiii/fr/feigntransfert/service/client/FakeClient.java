@@ -1,6 +1,6 @@
 package com.metaxiii.fr.feigntransfert.service.client;
 
-import com.metaxiii.fr.feigntransfert.service.config.FeignConfig;
+import com.metaxiii.fr.feigntransfert.config.FeignConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
