@@ -6,7 +6,7 @@ import java.text.MessageFormat;
 
 @Getter
 public class CustomException extends RuntimeException {
-    private final ErrorCodeDetails details;
+    private final transient ErrorCodeDetails details;
 
     public CustomException(final String customMessage) {
         super(customMessage);
