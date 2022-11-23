@@ -1,4 +1,4 @@
-package com.metaxiii.fr.feigntransfert.service.config;
+package com.metaxiii.fr.feigntransfert.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.metaxiii.fr.feigntransfert.dto.ErrorDto;

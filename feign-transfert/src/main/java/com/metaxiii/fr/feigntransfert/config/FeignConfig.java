@@ -1,4 +1,4 @@
-package com.metaxiii.fr.feigntransfert.service.config;
+package com.metaxiii.fr.feigntransfert.config;
 
 import feign.codec.ErrorDecoder;
 import org.springframework.context.annotation.Bean;

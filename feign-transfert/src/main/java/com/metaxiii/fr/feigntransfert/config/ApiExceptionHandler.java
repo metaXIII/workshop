@@ -1,4 +1,4 @@
-package com.metaxiii.fr.feigntransfert.controller;
+package com.metaxiii.fr.feigntransfert.config;
 
 import com.metaxiii.fr.feigntransfert.dto.ErrorDto;
 import lombok.extern.slf4j.Slf4j;
