@@ -10,7 +10,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest
+@WebMvcTest(HelloController.class)
 @AutoConfigureMockMvc
 class HelloControllerTest {
     @Autowired
@@ -18,7 +18,7 @@ class HelloControllerTest {
 
     @Test
     void hello() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/"))
+        mockMvc.perform(MockMvcRequestBuilders.get(""))
                 .andDo(print()).andExpect(status().isOk());
     }
 

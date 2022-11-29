@@ -27,7 +27,7 @@ class ControllerTest {
     @Test
     void hello() throws Exception {
         when(fakeClient.getHello()).thenReturn(ResponseEntity.ok(""));
-        mockMvc.perform(MockMvcRequestBuilders.get("/")).andDo(print())
+        mockMvc.perform(MockMvcRequestBuilders.get("")).andDo(print())
                 .andExpect(status().isOk());
     }
 
