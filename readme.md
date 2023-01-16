@@ -13,6 +13,18 @@ Response code are differents in they are from fake-feign or feign-transfert that
 
 ### web mvc test
 
+Test with @WebMvcTest
+
+
+### assembler
+
+How to use assembler for custom model returned to viewer
+
+### tuples
+
+How to use Java dependencies tuples.
+
+
 ## Licence
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
