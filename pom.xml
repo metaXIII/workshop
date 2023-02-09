@@ -12,6 +12,8 @@
         <module>webmvctest</module>
         <module>tuples</module>
         <module>assembler</module>
+        <module>updateJPA</module>
+        <module>mapstructlazy</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -43,6 +45,16 @@
             **/domain/*.java,
             **/*Impl.java
         </sonar.coverage.exclusions>
+        <sonar.cpd.exclusions> **/model/*.java,
+            **/configuration/*.java,
+            **/config/*.java,
+            **/entity/*.java,
+            **/enums/*.java,
+            **/dto/*.java,
+            **/exceptions/*.java,
+            **/creator/*.java,
+            **/domain/*.java,
+            **/*Impl.java</sonar.cpd.exclusions>
         <!--suppress UnresolvedMavenProperty -->
         <sonar.coverage.jacoco.xmlReportPaths>
             ${maven.multiModuleProjectDirectory}/report/target/site/jacoco-aggregate/jacoco.xml
