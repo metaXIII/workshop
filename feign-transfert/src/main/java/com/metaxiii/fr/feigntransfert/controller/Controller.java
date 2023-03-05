@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @Slf4j
 public class Controller {
-    private final FakeClient fakeClient;
+  private final FakeClient fakeClient;
 
-    @GetMapping
-    public ResponseEntity<String> hello() {
-        log.info("call fake");
-        return fakeClient.getHello();
-    }
+  @GetMapping("/")
+  public ResponseEntity<String> hello() {
+    log.info("call fake");
+    return fakeClient.getHello();
+  }
 
-    @GetMapping("{id}")
-    public ResponseEntity<String> sayError(@PathVariable(name = "id") String id) {
-        log.info("call for error");
-        return fakeClient.getError(id);
-    }
+  @GetMapping("{id}")
+  public ResponseEntity<String> sayError(@PathVariable(name = "id") String id) {
+    log.info("call for error");
+    return fakeClient.getError(id);
+  }
 }
