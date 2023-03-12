@@ -15,6 +15,7 @@
         <module>updateJPA</module>
         <module>mapstructlazy</module>
         <module>update multiples entity</module>
+        <module>test query</module>
     </modules>
     <packaging>pom</packaging>
 
