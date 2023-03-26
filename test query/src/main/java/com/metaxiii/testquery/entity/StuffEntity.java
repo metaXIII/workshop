@@ -18,10 +18,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name = "stuff")
 public class StuffEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  private Long id;
 
-    @Column(name = "stuff_value")
-    private String value;
+  @Column(name = "stuff_value")
+  private String value;
 }

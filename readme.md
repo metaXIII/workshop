@@ -1,30 +1,22 @@
 # Workshop
 
+[![jdk](https://img.shields.io/badge/java-17%2B-green)](https://jdk.java.net/17/)
+[![maven](https://img.shields.io/badge/maven-3.9.1-green)](https://maven.apache.org/download.cgi)
+
 ## Contents
 
-### feign-transfert
-
-#### manage exceptions throwns by feign.
-
-You will need to run fake-feign feign first in order to run the fake server that will get request from the second one : feign-transfert.
-
-Testcase : check code return of 1, 2, 3 and 4.
-Response code are differents in they are from fake-feign or feign-transfert that just take back an object from the fake-feign.
-
-### web mvc test
-
-Test with @WebMvcTest
-
-
-### assembler
-
-How to use assembler for custom model returned to viewer
-
-### tuples
-
-How to use Java dependencies tuples.
-
+| Module                  | Topic                               | Quick Description                                                                                                                                                                                                                                                                                                    | Done | 
+|-------------------------|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|
+| feign-transfert         | manage exceptions throwns by feign. | You will need to run fake-feign feign first in order to run the fake server that will get request from the second one : feign-transfert.Testcase : check code return of 1, 2, 3 and 4.Response code are differents in they are from fake-feign or feign-transfert that just take back an object from the fake-feign. | ✅    |
+| web mvc test            | test                                | Test with @WebMvcTest                                                                                                                                                                                                                                                                                                | ✅    |
+| assembler               | Rest Best Practices                 | How to use assembler for custom model returned to viewer                                                                                                                                                                                                                                                             | ✅    |
+| tuples                  | Tuples                              | How to use Java dependencies tuples.                                                                                                                                                                                                                                                                                 | ✅    |
+| mapstruct lazy          | Mapstruct                           | How to use Mapstruct to ignore custom fields                                                                                                                                                                                                                                                                         | ✅    |
+| test query              | JPA                                 | Compare efficiency between JPA and native Query SQL                                                                                                                                                                                                                                                                  | ❌    | 
+| update multiples entity | Mapstruct                           | Allow update of entity by mapstruct when Generic DTO is used                                                                                                                                                                                                                                                         | ❌    |
+| update Jpa              | JPA                                 | Update Query returning void to just update some custom fieds                                                                                                                                                                                                                                                         | ✅    |
+| report                  | report                              | agregate result for build                                                                                                                                                                                                                                                                                            | ✅    |
 
 ## Licence
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
