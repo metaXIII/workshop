@@ -1,14 +1,15 @@
 package com.metaxiii.fr.service;
 
+import com.metaxiii.fr.dto.OwnerEntityProjectionDTO;
 import com.metaxiii.fr.entity.OwnerEntity;
-import com.metaxiii.fr.DTO.OwnerEntityProjectionDTO;
-
 import java.util.List;
 
 public interface OwnerService {
-    List<OwnerEntity> findAll();
+  List<OwnerEntity> findAll();
 
-    OwnerEntityProjectionDTO findById(long id);
+  OwnerEntityProjectionDTO findById(long id);
 
-    OwnerEntity partialSave(OwnerEntityProjectionDTO save);
+  OwnerEntity partialSave(OwnerEntityProjectionDTO save);
+
+  OwnerEntity save(OwnerEntityProjectionDTO projection);
 }
