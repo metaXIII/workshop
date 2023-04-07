@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
   private final UserRepository repository;
 
-  public boolean isItWorkWithoutFlushing() {
+  public void isItWorkWithoutFlushing() {
     final var john = repository.findById(1L).orElse(null);
     if (john != null) {
       john.setActive(false);
@@ -21,7 +21,6 @@ public class UserService {
       // long behavior but eventually we need to delete him
       //then we have to find all user for whatever reason
     }
-    return findIfJohnExist();
   }
 
   public boolean findIfJohnExist() {
@@ -36,9 +35,6 @@ public class UserService {
 
   public boolean isItWorkWithoutClearing() {
     repository.findById(1L).ifPresent(user -> repository.deleteUser());
-    if (repository.findById(1L).isPresent()) {
-      return true;
-    }
-    return false;
+    return repository.findById(1L).isPresent();
   }
 }

@@ -17,7 +17,8 @@ class UserServiceTest {
 
   @Test
   void itShouldIsItWorkWithoutFlushing() {
-    assertTrue(userService.isItWorkWithoutFlushing());
+    userService.isItWorkWithoutFlushing();
+    assertTrue(userService.findIfJohnExist());
   }
 
   @Test

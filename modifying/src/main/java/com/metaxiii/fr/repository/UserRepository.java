@@ -11,12 +11,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
   @Transactional
-  @Modifying
+  @Modifying(flushAutomatically = true)
   @Query("delete User u where u.active = false")
   void deleteInActiveUsers();
 
   @Transactional
-  @Modifying
+  @Modifying(flushAutomatically = true)
   @Query("delete User u where u.id = 1")
   void deleteUser();
 
