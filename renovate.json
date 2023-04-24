@@ -3,9 +3,5 @@
   "extends": [
     "config:base", ":disableDependencyDashboard"
   ],
-  "packageRules": [
-    {
-      "excludeDepNames": ["modifying"]
-    }
-  ]
+  "ignorePaths": ["./modifying"]
 }
