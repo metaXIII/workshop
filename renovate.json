@@ -5,7 +5,7 @@
   ],
   "packageRules": [
     {
-      "excludePackageNames": ["modifying"]
+      "excludeDepNames": ["modifying"]
     }
   ]
 }
