@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "6a7736f6-0cf4-443b-bb56-5759d3871b36",
+		"name": "Workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9122706"
+	},
+	"item": [
+		{
+			"name": "Record",
+			"item": [
+				{
+					"name": "find All",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "find fewer with record",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"propertyOne\": \"1\"\r\n  \"propertyTwo\": \"2\"\r\n  \"propertyThree\" : \"3\"\r\n  \"propertyFour\" : \"4\"\r\n  \"propertyFive\": \"5\"\r\n  \"propertySix\" : \"6\"\r\n  \"propertySeven\" : \"7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"propertyOne\": \"1\",\r\n    \"propertyTwo\": \"2\",\r\n    \"propertyThree\": \"3\",\r\n    \"propertyFour\": \"4\",\r\n    \"propertyFive\": \"5\",\r\n    \"propertySix\": \"6\",\r\n    \"propertySeven\": \"7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Record And Retrieve Record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"propertyOne\": \"1\",\r\n    \"propertyTwo\": \"2\",\r\n    \"propertyThree\": \"3\",\r\n    \"propertyFour\": \"4\",\r\n    \"propertyFive\": \"5\",\r\n    \"propertySix\": \"6\",\r\n    \"propertySeven\": \"7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
