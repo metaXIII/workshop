@@ -17,6 +17,7 @@
         <module>update multiples entity</module>
         <module>test query</module>
         <module>modifying</module>
+        <module>record</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -46,7 +47,8 @@
             **/exceptions/*.java,
             **/creator/*.java,
             **/domain/*.java,
-            **/*Impl.java
+            **/*Impl.java,
+            **/records/*.java
         </sonar.coverage.exclusions>
         <sonar.cpd.exclusions> **/model/*.java,
             **/configuration/*.java,
