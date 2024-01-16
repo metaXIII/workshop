@@ -16,7 +16,6 @@
         <module>mapstructlazy</module>
         <module>update multiples entity</module>
         <module>test query</module>
-        <module>modifying</module>
         <module>record</module>
     </modules>
     <packaging>pom</packaging>

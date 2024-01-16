@@ -61,11 +61,6 @@
         </dependency>
         <dependency>
             <groupId>com.metaxiii.fr</groupId>
-            <artifactId>modifying</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.metaxiii.fr</groupId>
             <artifactId>record</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
