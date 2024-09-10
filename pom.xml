@@ -17,6 +17,7 @@
         <module>update multiples entity</module>
         <module>test query</module>
         <module>record</module>
+        <module>java1721</module>
     </modules>
     <packaging>pom</packaging>
 
