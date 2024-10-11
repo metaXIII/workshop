@@ -18,6 +18,7 @@
         <module>test query</module>
         <module>record</module>
         <module>java1721</module>
+        <module>clean-architecture</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -48,9 +49,10 @@
             **/creator/*.java,
             **/domain/*.java,
             **/*Impl.java,
-            **/records/*.java
+            **/records/*.java,
+            **/clean-architecture/**.java
         </sonar.coverage.exclusions>
-        <sonar.cpd.exclusions> **/model/*.java,
+        <sonar.cpd.exclusions>**/model/*.java,
             **/configuration/*.java,
             **/config/*.java,
             **/entity/*.java,
@@ -59,7 +61,9 @@
             **/exceptions/*.java,
             **/creator/*.java,
             **/domain/*.java,
-            **/*Impl.java</sonar.cpd.exclusions>
+            **/*Impl.java,
+            **/clean-architecture/**.java
+        </sonar.cpd.exclusions>
         <!--suppress UnresolvedMavenProperty -->
         <sonar.coverage.jacoco.xmlReportPaths>
             ${maven.multiModuleProjectDirectory}/report/target/site/jacoco-aggregate/jacoco.xml
@@ -84,6 +88,11 @@
             <artifactId>junit-jupiter-api</artifactId>
             <scope>test</scope>
             <version>5.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.6.0</version>
         </dependency>
     </dependencies>
 
