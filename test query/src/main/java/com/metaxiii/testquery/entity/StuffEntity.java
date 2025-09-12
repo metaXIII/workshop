@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,14 +13,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "stuff")
 public class StuffEntity {
+
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
 
   @Column(name = "stuff_value")
   private String value;
+
+  public StuffEntity(final String value) {
+    this.value = value;
+  }
 }

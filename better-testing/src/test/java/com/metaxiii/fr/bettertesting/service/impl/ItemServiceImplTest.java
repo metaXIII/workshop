@@ -1,38 +1,41 @@
 package com.metaxiii.fr.bettertesting.service.impl;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.metaxiii.fr.bettertesting.mapper.ItemMapper;
-import com.metaxiii.fr.bettertesting.repository.ItemRepository;
-import com.metaxiii.fr.bettertesting.service.ItemService;
-import java.util.List;
-import org.junit.jupiter.api.Assertions;
+import com.metaxiii.fr.bettertesting.enums.StatusEnum;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@ExtendWith(MockitoExtension.class)
+@DataJpaTest
+@ComponentScan(value = "com.metaxiii.fr.bettertesting")
 class ItemServiceImplTest {
 
-  @InjectMocks
+  @Autowired
   private ItemServiceImpl itemService;
 
-  @Mock
-  private ItemRepository itemRepository;
-
-  @Mock
-  private ItemMapper itemMapper;
-
+  /*
+    query generated:
+    select ie1_0.id,ie1_0.description,ie1_0.is_available,ie1_0.name,ie1_0.status
+    from item_entity ie1_0
+    where ie1_0.is_available
+   */
   @Test
   void itShouldShopAllItems() {
-    when(itemRepository.findAll()).thenReturn(List.of());
-    assertDoesNotThrow(() -> itemService.shopAllItems());
+    final var items = itemService.shopAllItems();
+    assertEquals(2, items.size());
+    final var firstItem = items.getFirst();
+    final var lastItem = items.getLast();
+    assertEquals(2, firstItem.id());
+    assertEquals("PC Gaming", firstItem.name());
+    assertEquals("A powerful computer", firstItem.description());
+    assertEquals(StatusEnum.NEW, firstItem.status());
+    assertEquals(true, firstItem.isAvailable());
+    assertEquals(3, lastItem.id());
+    assertEquals("RG3S", lastItem.name());
+    assertEquals("A portable console for retro gaming", lastItem.description());
+    assertEquals(StatusEnum.NEW, firstItem.status());
+    assertEquals(true, firstItem.isAvailable());
   }
 }

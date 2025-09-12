@@ -19,6 +19,6 @@ public class ItemServiceImpl implements ItemService {
 
   @Override
   public List<Item> shopAllItems() {
-    return itemRepository.findAll().stream().filter(ItemEntity::isAvailable).map(itemMapper::toDomain).toList();
+    return itemRepository.findAllByIsAvailableTrue().stream().map(itemMapper::toDomain).toList();
   }
 }

@@ -3,7 +3,7 @@ package com.metaxiii.fr.java1721;
 @SuppressWarnings("java:S106")
 public class S17 {
 
-  public String improvedSwitch_v1(final int choice) {
+  public String improvedSwitchV1(final int choice) {
     return switch (choice) {
       case 1:
         yield "A";
@@ -15,7 +15,7 @@ public class S17 {
     };
   }
 
-  public String improvedSwitch_v2(final int choice) {
+  public String improvedSwitchV2(final int choice) {
     return switch (choice) {
       case 1 -> "A";
       case 2 -> "B";
@@ -28,11 +28,11 @@ public class S17 {
 
   public String jsonBlock() {
     return """
-        {
-          "name" : "Gaël",
-          "lastName": "Smith",
-          "profession": "PR destroyer",
-          "age": 20
-        }""";
+    {
+      "name" : "Gaël",
+      "lastName": "Smith",
+      "profession": "PR destroyer",
+      "age": 20
+    }""";
   }
 }

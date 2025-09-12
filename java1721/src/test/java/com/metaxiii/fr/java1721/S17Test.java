@@ -37,38 +37,38 @@ class S17Test {
   private S17 mainClass;
 
   @BeforeEach
-  public void beforeEach() {
+  void beforeEach() {
     mainClass = new S17();
   }
 
   @Test
   void itShouldImprovedSwitch_v1_1() {
-    assertEquals("A", mainClass.improvedSwitch_v1(1));
+    assertEquals("A", mainClass.improvedSwitchV1(1));
   }
 
   @Test
   void itShouldImprovedSwitch_v1_2() {
-    assertEquals("B", mainClass.improvedSwitch_v1(2));
+    assertEquals("B", mainClass.improvedSwitchV1(2));
   }
 
   @Test
   void itShouldImprovedSwitch_v1_3() {
-    assertEquals("C", mainClass.improvedSwitch_v1(3));
+    assertEquals("C", mainClass.improvedSwitchV1(3));
   }
 
   @Test
   void itShouldImprovedSwitch_v2_1() {
-    assertEquals("A", mainClass.improvedSwitch_v2(1));
+    assertEquals("A", mainClass.improvedSwitchV2(1));
   }
 
   @Test
   void itShouldImprovedSwitch_v2_2() {
-    assertEquals("B", mainClass.improvedSwitch_v2(2));
+    assertEquals("B", mainClass.improvedSwitchV2(2));
   }
 
   @Test
   void itShouldImprovedSwitch_v2_3() {
-    assertEquals("C", mainClass.improvedSwitch_v2(3));
+    assertEquals("C", mainClass.improvedSwitchV2(3));
   }
 
   @Test
@@ -152,6 +152,7 @@ class S17Test {
         final var pizza = new Pizza();
         pizza.eat(); //ok
 
+        @SuppressWarnings("unused")
         final var dev = new Developer();
         //dev cannot be eaten anymore
         //dev.eat(); //ok but it should not be
@@ -177,7 +178,7 @@ class S17Test {
   class PatternMatchingWithJava11_3 {
 
     @Test
-    @SuppressWarnings("UnnecessaryLocalVariable")
+    @SuppressWarnings({ "PatternVariableCanBeUsed", "CastCanBeRemovedNarrowingVariableType" })
     void itShouldMatch() {
       final Object obj = new Developer("myself");
       if (obj instanceof Developer) {
@@ -194,6 +195,7 @@ class S17Test {
   class PatternMatchingWithJava17_4 {
 
     @Test
+    @SuppressWarnings("DeconstructionCanBeUsed")
     void itShouldMatch() {
       final Object obj = new Developer("myself");
       if (obj instanceof final Developer dev) {
