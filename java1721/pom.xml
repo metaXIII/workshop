@@ -10,7 +10,6 @@
     </parent>
 
 
-    <groupId>com.metaxiii.fr</groupId>
     <artifactId>java1721</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>java1721</name>
@@ -36,7 +35,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -58,9 +56,6 @@
                     <source>21</source>
                     <target>21</target>
                     <encoding>UTF-8</encoding>
-<!--                    <compilerArgs>-->
-<!--                        <compilerArg>&#45;&#45;enable-preview</compilerArg>-->
-<!--                    </compilerArgs>-->
                 </configuration>
             </plugin>
         </plugins>

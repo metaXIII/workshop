@@ -1,16 +1,14 @@
 package com.metaxiii.fr.java1721;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.Executors;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+@SuppressWarnings({ "java:S125", "java:S2699", "CommentedOutCode" })
 class S21Test {
 
   /*
@@ -18,28 +16,28 @@ class S21Test {
     itShouldShowSequence
    */
 
-//  @Test
-//  void itShouldJsonBlock() {
-//    final var jsonBlock =
-//        """
-//            {
-//              "name" : "{ name }",
-//              "lastName": "Smith",
-//              "profession": "PR destroyer",
-//              "age": 20
-//            }""";
-//    System.out.println(jsonBlock);
-//    final var name = "Gaël";
-//    System.out.println(STR."{\n  \"name\" : \{name},\n  \"lastName\": \"Smith\",\n  \"profession\": \"PR destroyer\",\n  \"age\": 20\n}");
-//
-//    System.out.println(STR."""
-//        {
-//              "name" : "\{name}",
-//              "lastName": "Smith",
-//              "profession": "PR destroyer",
-//              "age": 20
-//            }""");
-//  }
+  //  @Test
+  //  void itShouldJsonBlock() {
+  //    final var jsonBlock =
+  //        """
+  //            {
+  //              "name" : "{ name }",
+  //              "lastName": "Smith",
+  //              "profession": "PR destroyer",
+  //              "age": 20
+  //            }""";
+  //    System.out.println(jsonBlock);
+  //    final var name = "Gaël";
+  //    System.out.println(STR."{\n  \"name\" : \{name},\n  \"lastName\": \"Smith\",\n  \"profession\": \"PR destroyer\",\n  \"age\": 20\n}");
+  //
+  //    System.out.println(STR."""
+  //        {
+  //              "name" : "\{name}",
+  //              "lastName": "Smith",
+  //              "profession": "PR destroyer",
+  //              "age": 20
+  //            }""");
+  //  }
 
   @Test
   void itShouldShowSequence() {
@@ -69,11 +67,8 @@ class S21Test {
     //Depending on the OS and configuration, they consume somewhere between 2 and 10 MB by default. So if you want to utilize a million threads in your heavy-load concurrent application, you better have more than 2 TB of memory to spare!
     try (final var executor = Executors.newVirtualThreadPerTaskExecutor()) {
       for (int i = 0; i < 1000; i++) {
-
         int taskNumber = i;
-        executor.submit(() -> {
-          System.out.println("Task " + taskNumber + " is running in a virtual thread!");
-        });
+        executor.submit(() -> System.out.println("Task " + taskNumber + " is running in a virtual thread!"));
       }
 
       executor.shutdown();
@@ -94,7 +89,6 @@ class S21Test {
       }
     }
 
-    private record Developer(String name) {
-    }
+    private record Developer(String name) {}
   }
 }

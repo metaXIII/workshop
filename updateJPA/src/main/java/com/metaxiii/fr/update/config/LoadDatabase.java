@@ -16,9 +16,7 @@ public class LoadDatabase {
   CommandLineRunner initDatabase(ItemRepository itemRepository) {
     return args -> {
       itemRepository.save(
-        Item
-          .builder()
-          .id(1L)
+        Item.builder()
           .name("my item")
           .value(10.00)
           .createdAt(LocalDateTime.now())

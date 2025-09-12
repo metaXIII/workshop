@@ -21,5 +21,5 @@ public class ItemEntity {
 
   private StatusEnum status;
 
-  private boolean isAvailable;
+  private Boolean isAvailable;
 }

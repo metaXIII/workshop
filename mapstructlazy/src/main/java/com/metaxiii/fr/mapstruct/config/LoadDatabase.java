@@ -10,24 +10,22 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
 @Slf4j
+@Configuration
 public class LoadDatabase {
 
   @Bean
   CommandLineRunner initDatabase(ItemRepository itemRepository, UtilityRepository utilityRepository) {
     return args -> {
       final var itemSaved = itemRepository.save(
-        ItemEntity
-          .builder()
-          .id(1L)
+        ItemEntity.builder()
           .name("my item")
           .value(10.00)
           .createdAt(LocalDateTime.now())
           .updatedAt(LocalDateTime.now())
           .build()
       );
-      utilityRepository.save(UtilityEntity.builder().id(1L).values("Not usefull").item(itemSaved).build());
+      utilityRepository.save(UtilityEntity.builder().values("Not usefull").item(itemSaved).build());
       itemRepository.findAll().forEach(item -> log.info("Preloaded " + item));
       utilityRepository.findAll().forEach(utility -> log.info("Preloaded " + utility));
     };

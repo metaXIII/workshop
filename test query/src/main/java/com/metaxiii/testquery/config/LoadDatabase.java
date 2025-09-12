@@ -14,7 +14,8 @@ public class LoadDatabase {
     return args -> {
       int i = 0;
       while (i < 60000) {
-        repository.save(new StuffEntity((long) i, "_" + i));
+        //repository.save(new StuffEntity((long) i, "_" + i)); will not work now, because of the id specified
+        repository.save(new StuffEntity(("_" + i)));
         i++;
       }
     };
