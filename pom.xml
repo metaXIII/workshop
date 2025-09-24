@@ -20,6 +20,7 @@
         <module>java1721</module>
         <module>clean-architecture</module>
         <module>better-testing</module>
+        <module>jsonpatch</module>
     </modules>
     <packaging>pom</packaging>
 
