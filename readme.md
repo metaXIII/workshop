@@ -1,7 +1,7 @@
 # Workshop
-
 [![jdk](https://img.shields.io/badge/java-17%2B-green)](https://jdk.java.net/17/)
 [![maven](https://img.shields.io/badge/maven-3.9.1-green)](https://maven.apache.org/download.cgi)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=metaXIII_workshop&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=metaXIII_workshop)
 
 ## Contents
 

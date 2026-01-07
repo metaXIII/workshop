@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class ItemServiceImpl implements ItemService {
+
   private final ItemMapper mapper;
   private final ItemRepository repository;
 
@@ -25,6 +26,6 @@ public class ItemServiceImpl implements ItemService {
 
   @Override
   public Item findById(final long id) {
-    return mapper.toDomain(repository.findById(id).orElse(null));
+    return mapper.toDomain(repository.findById((int) id).orElse(null));
   }
 }
